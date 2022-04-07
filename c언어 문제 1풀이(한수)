@@ -1,0 +1,40 @@
+#pragma warning(disable: 4996)
+#include <stdio.h>
+
+int print(int a)//한수의 함수
+{
+	int f;
+	int count = 0;
+	int arr[3] = { 0 };
+	for(int b = 1; b<= a; b++)
+	{
+		
+		if (b < 100)
+		{
+			count++;
+		}
+		
+		if (b > 99 && b != 1000)
+		{
+			f = b;
+			
+			for(int c = 0; c < 3; c++)
+			{
+				
+				arr[c] = f % 10;
+				f = f / 10;
+			}
+			if (arr[0] - arr[1] == arr[1] - arr[2])
+			{
+				count++;
+			}
+		}
+	}
+	return count;
+}
+int main(void)
+{
+	int a;
+	scanf("%d", &a);
+	printf("%d",print(a));
+}
